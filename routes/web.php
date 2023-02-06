@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [UrlController::class, 'index']);
 
-Route::post('/url', [UrlController::class, 'createUrl']);
+Route::post('/url', [UrlController::class, 'generateShortUrl']);
 
 Route::get('/url/{key}', [UrlController::class, 'getOriginalUrl']);

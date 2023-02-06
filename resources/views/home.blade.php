@@ -59,8 +59,8 @@
             <tbody>
                 @forelse ($urls as $url)
                 <tr>
-                    <th scope="row">{{ $loop->iteration }}</th>
-                    <td><a href="#" class="url-key" onclick="getOriginalUrl('{{ $url->key }}')"> {{ URL::to('/') . '/' . $url->key }}</a></td>
+                    <th scope="row">{{ ($urls->perPage() * ($urls->currentPage() - 1)) + $loop->iteration }}</th>
+                    <td><a href="#" class="url-key" onclick="getOriginalUrl('{{ $url->key }}')">https://ci.com/{{ $url->key }}</a></td>
                 </tr>
                 @empty
                 <tr>

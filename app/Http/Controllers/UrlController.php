@@ -22,14 +22,14 @@ class UrlController extends Controller
         return view('home', ['urls' => $urls]);
     }
 
-    public function createUrl(Request $request)
+    public function generateShortUrl(Request $request)
     {
         // URL Validation
         $request->validate([
             'url' => ['required', 'url']
         ]);
 
-        // Generate key and secret_key
+        // Generate key
         $key = $this->urlShortenerService->generateUniqueKey();
 
         // Insert into database
